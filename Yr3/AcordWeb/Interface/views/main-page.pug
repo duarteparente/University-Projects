@@ -1,0 +1,109 @@
+html 
+    head 
+        title AcordWEB 
+        link(rel="stylesheet" href="/stylesheets/main-page.css")
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+        link(rel="stylesheet" href="/stylesheets/navbar.css")
+    body
+        script.
+            function handleButtonClickP() {
+                var inputValue = document.getElementById('search-input').value.replaceAll("/", "%2F");
+                if (inputValue != '') {
+                    window.location.href = '/processo?proc=' + inputValue;
+                    document.getElementById('search-input').value = "";
+                }
+            }
+
+        script.
+            function toggle(popupId) {
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+
+                var popup = document.querySelector('.' + popupId);
+                popup.classList.toggle('active');
+            }
+        
+        script.
+            function handleButtonClick(popupId) {
+                var inputValue1 = document.getElementById(`search-input1-${popupId}`).value;
+                var inputValue2 = document.getElementById(`search-input2-${popupId}`).value;
+                var inputValue3 = document.getElementById(`search-input3-${popupId}`).value.replaceAll("/", "%2F");
+                document.getElementById(`search-input2-${popupId}`).value = "";
+                document.getElementById(`search-input3-${popupId}`).value = "";
+                window.location.href = '/tribunal?tribunal=' + inputValue1 + '&Descritor=' + inputValue2 + '&DataAcordao=' + inputValue3;
+            }
+
+        script. 
+            function dropDownToggle() {
+                var toggle = document.querySelector('.dropdown');
+                toggle.classList.toggle('active');
+            }
+
+        .container#blur
+        
+            include navbar.pug
+            
+            .row 
+                .col1
+                    h1 Pesquisa por Processo
+                    input(id="search-input" type="text" placeholder=" Processo")
+                    button(type="submit" onclick="handleButtonClickP()") Procurar
+                
+                .col2
+                    .card
+                        a(href="#" onclick="toggle('popup1'); event.preventDefault();") ATCO1
+                    .card
+                        a(href="#" onclick="toggle('popup2'); event.preventDefault();") JCON
+                    .card
+                        a(href="#" onclick="toggle('popup3'); event.preventDefault();") JDGPJ
+                    .card
+                        a(href="#" onclick="toggle('popup4'); event.preventDefault();") JSTA
+                    .card
+                        a(href="#" onclick="toggle('popup5'); event.preventDefault();") JSTJ
+                    .card
+                        a(href="#" onclick="toggle('popup6'); event.preventDefault();") JTCA
+                    .card
+                        a(href="#" onclick="toggle('popup7'); event.preventDefault();") JTCAMPCA
+                    .card
+                        a(href="#" onclick="toggle('popup8'); event.preventDefault();") JTCAMPCT
+                    .card
+                        a(href="#" onclick="toggle('popup9'); event.preventDefault();") JTCN
+                    .card
+                        a(href="#" onclick="toggle('popup10'); event.preventDefault();") JTRC
+                    .card
+                        a(href="#" onclick="toggle('popup11'); event.preventDefault();") JTRE
+                    .card
+                        a(href="#" onclick="toggle('popup12'); event.preventDefault();") JTRG
+                    .card
+                        a(href="#" onclick="toggle('popup13'); event.preventDefault();") JTRL
+                    .card
+                        a(href="#" onclick="toggle('popup14'); event.preventDefault();") JTRP
+         
+
+            include footer.pug
+        
+        - 
+            var popups = [{ id: 'popup1', title: 'Acórdãos do Tribunal Constitucional', value: 'atco1' },
+                          { id: 'popup2', title: 'Acórdãos do Tribunal dos Conflitos', value: 'jcon' },
+                          { id: 'popup3', title: 'Cláusulas Abusivas julgadas pelos Tribunais', value: 'jdgpj' },
+                          { id: 'popup4', title: 'Acórdãos do Supremo Tribunal Administrativo', value: 'jsta' },
+                          { id: 'popup5', title: 'Acórdãos do Supremo Tribunal de Justiça', value: 'jstj' },
+                          { id: 'popup6', title: 'Acórdãos do Tribunal Central Administrativo Sul', value: 'jtca' },
+                          { id: 'popup7', title: 'Pareceres do Ministério Público do Tribunal Central Administrativo Sul - Contencioso Administrativo', value: 'jtcampca' },
+                          { id: 'popup8', title: 'Pareceres do Ministério Público do Tribunal Central Administrativo Sul - Contencioso Tributário', value: 'jtcampct' },
+                          { id: 'popup9', title: 'Acórdãos do Tribunal Central Administrativo Norte', value: 'jtcn' },
+                          { id: 'popup10', title: 'Acórdãos do Tribunal da Relação de Coimbra', value: 'jtrc' },
+                          { id: 'popup11', title: 'Acórdãos do Tribunal da Relação de Évora', value: 'jtre' },
+                          { id: 'popup12', title: 'Acórdãos do Tribunal da Relação de Guimarães', value: 'jtrg' },
+                          { id: 'popup13', title: 'Acórdãos do Tribunal da Relação de Lisboa', value: 'jtrl' },
+                          { id: 'popup14', title: 'Acórdãos do Tribunal da Relação do Porto', value: 'jtrp' }]
+
+        each popup in popups
+            .popup(class=popup.id)
+                p= popup.title
+                li: input(id=`search-input1-${popup.id}` type='text' value=popup.value readonly)
+                li: input(id=`search-input2-${popup.id}` type='text' placeholder='Descritor')
+                li: input(id=`search-input3-${popup.id}` type='text' placeholder='Data do Acórdão [mm/dd/aaaa]')
+                li: button(type='submit' onclick=`handleButtonClick('${popup.id}')`) Procurar
+                img.popup-image(src='/images/close.png', alt='close', onclick=`toggle('${popup.id}')`)

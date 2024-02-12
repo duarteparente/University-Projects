@@ -1,0 +1,21 @@
+html 
+    head 
+        title AcordWEB 
+        link(rel="stylesheet" href="/stylesheets/not-found.css")
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+    body
+        .container
+            .error
+                .box 
+                    img(src="/images/sad.png")
+                    h1 ACÓRDÃO NÃO ENCONTRADO!
+                    h2 Não foi encontrado nenhum documento correspondente aos critérios da sua pesquisa.
+                    h3 Verifique o seu input e tente novamente! 
+                    a(href="javascript:void(0)", onclick="goBack()") VOLTAR
+                    script.
+                        function goBack() {
+                            window.history.go(-1);
+                        }
+                
+
+            include footer.pug

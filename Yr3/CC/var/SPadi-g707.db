@@ -1,0 +1,26 @@
+# DNS database file for domain adi.g707.
+
+adi.g707. SOASP SPadi.adi.g707. 86400
+adi.g707. SOAADMIN dns\.admin.adi.g707. 86400
+adi.g707. SOASERIAL 0122112022 86400. 
+adi.g707. SOAREFRESH 14400 86400
+adi.g707. SOARETRY 3600 86400
+adi.g707. SOAEXPIRE 604800 86400
+
+adi.g707. NS SPadi.adi.g707. 86400
+adi.g707. NS SS1adi.adi.g707. 86400
+adi.g707. NS SS2adi.adi.g707. 86400
+ppc.adi.g707. NS SPppc.ppc.adi.g707 86400
+
+adi.g707. MX email3.adi.g707. 86400 10
+
+SPadi.adi.g707. A 10.0.4.10 86400
+SS1adi.adi.g707. A 10.0.5.10 86400
+SS2adi.adi.g707. A 10.0.6.10 86400
+email3.adi.g707. A 10.0.5.11 86400
+SPppc.ppc.adi.g707 A 10.0.10.10 86400
+
+sp CNAME SPadi 86400
+ss1 CNAME SS1adi 86400
+ss2 CNAME SS2adi 86400
+mail3 CNAME email3 86400

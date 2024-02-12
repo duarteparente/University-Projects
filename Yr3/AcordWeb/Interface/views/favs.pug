@@ -1,0 +1,33 @@
+html 
+    head 
+        title AcordWEB 
+        link(rel="stylesheet" href="/stylesheets/favs.css")
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+        link(rel="stylesheet" href="/stylesheets/navbar.css")
+    body
+        script. 
+            function dropDownToggle() {
+                var toggle = document.querySelector('.dropdown');
+                toggle.classList.toggle('active');
+            }
+
+        .container
+            include navbar.pug
+            
+            .content         
+                .title 
+                    h1 Favoritos [#{favs.length} registos encontrados]
+                .box
+                    .table-wrapper
+                        if favs.length > 0
+                            table 
+                                tr 
+                                    th Processo 
+                                    th Descrição
+                                each fav in favs
+                                    tr 
+                                        td 
+                                            a(href="/processo?proc=" + fav.Processo)= fav.Processo
+                                        td= fav.Descricao
+
+            include footer.pug

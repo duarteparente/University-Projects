@@ -1,0 +1,156 @@
+html 
+    head 
+        title AcordWEB 
+        link(rel="stylesheet" href="/stylesheets/acordao-page.css")
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+        link(rel="stylesheet" href="/stylesheets/navbar.css")
+    body
+        script. 
+            function dropDownToggle() {
+                var toggle = document.querySelector('.dropdown');
+                toggle.classList.toggle('active');
+            }
+        
+            function toggleEd() {
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+            }
+
+            function toggleEl() {
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+
+                var popup = document.getElementById('popupE');
+                popup.classList.toggle('active');
+            }
+
+            function toggleFv() {
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+
+                var popup = document.getElementById('popupF');
+                popup.classList.toggle('active');
+            }
+        
+            function resetInputs() {
+                const inputElements = document.querySelectorAll('.input-container input');
+
+                inputElements.forEach(function(input) {
+                    input.value = input.defaultValue;
+                });
+            }
+
+        .container#blur
+        
+            include navbar.pug
+            
+            .content         
+                .title
+                    h1 Processo #{a.Processo}
+                    ul
+                        li.bt: a(href="javascript:void(0)", onclick="goBack()") Voltar
+                        script.
+                            function goBack() {
+                                window.history.go(-1);
+                            }
+                        if adm == true
+                            li: a(href="#" onclick="toggleEd(); event.preventDefault();" title)
+                                img.ed(src="/images/edit2.png")
+                            li: a(href="#" onclick="toggleEl(); event.preventDefault();")
+                                img.el(src="/images/garbage2.png")
+                        if log == true
+                            - var favItem = favs.find(obj => obj.Processo === a.Processo)
+                            if favItem 
+                                li: a(href="/processo/elimina/" + a.Processo.replaceAll("/", "%2F"))
+                                    img.fv(src="/images/heart-red.png")
+
+                            else 
+                                li: a(href="#" onclick="toggleFv(); event.preventDefault();")
+                                    img.fv(src="/images/heart2.png")
+                
+                .box
+                    .table-wrapper
+                        table 
+                            each key in Object.keys(a)
+                                tr
+                                    if key != '_id' && key != 'Processo' && key != 'Edited' && key != 'Added' && key != 'AdicionadoPor' && key != 'EditadoPor'
+                                        if key in d
+                                            td.key= d[key]
+                                        else
+                                            if key == 'url'
+                                            td.key= key
+                                        if key == 'url'
+                                            td
+                                                a(href="http://www.dgsi.pt" + a[key] target='_blank')= a[key]
+                                        else 
+                                            td= a[key]
+
+            if "Added" in a
+                if a.Added != 'N' && a.Added != ''
+                    p.info Adicionado por: 
+                        a(href="/" + a.AdicionadoPor + "/perfil") #{a.AdicionadoPor} (#{a.Added})
+
+            if "Edited" in a
+                if a.Edited != 'N' && a.Edited != ''
+                    p.info Editado por: 
+                        a(href="/" + a.EditadoPor + "/perfil") #{a.EditadoPor}
+
+            include footer.pug
+
+        #popup
+            form(action=`/processo/editar?id=${a._id}&Processo=${a.Processo}` method="POST")
+                h1 Editar processo
+                table 
+                    each key in Object.keys(a)
+                        tr
+                            if key != '_id' && key != 'Processo' && key != 'Descritores' && key != 'Edited' && key != 'Added' && key != 'AdicionadoPor' && key != 'EditadoPor'
+                                td.key= d[key]
+                                
+                                td.inp
+                                    .input-container
+                                        if key != 'Descritores'
+                                            if key == 'tribunal'
+                                                select(name="tribunal")
+                                                    option(value="atco1") atco1
+                                                    option(value="jcon") jcon
+                                                    option(value="jdgpj") jdgpj
+                                                    option(value="jsta") jsta
+                                                    option(value="jstj") jstj
+                                                    option(value="jtca") jtca
+                                                    option(value="jtcampca") jtcampca
+                                                    option(value="jtcampct") jtcampct
+                                                    option(value="jtcn") jtcn
+                                                    option(value="jtrc") jtrc
+                                                    option(value="jtre") jtre
+                                                    option(value="jtrg") jtrg
+                                                    option(value="jtrl") jtrl
+                                                    option(value="jtrp") jtrp
+                                            else
+                                                input(name=key type="text" value=a[key])
+                input(type="text" style="display:none;" name="EditadoPor" value=username)
+                input(type="text" style="display:none;" name="Edited" value="S")
+
+                img.popup-image(src='/images/close.png', alt='close', onclick=`toggleEd(); resetInputs()`)
+                button(type='submit') Guardar alterações
+        
+        #popupE
+            form(action=`/processo/eliminar?id=${a._id}&Processo=${a.Processo}` method="POST")
+                h1 Eliminar processo
+                p Tem a certeza de que pretende eliminar este registo?
+
+                img.popup-image(src='/images/close.png', alt='close', onclick=`toggleEl()`)
+                button(type='submit') Confirmar
+        
+        #popupF
+            form(action='/processo/fav/' + a.Processo.replaceAll("/", "%2F") method="POST")
+                h1 Adicionar processo aos favoritos
+                p Insira uma descrição (opcional)
+                .input-container
+                    input(name="Descricao" type="text")
+                
+
+                img.popup-image(src='/images/close.png', alt='close', onclick=`toggleFv(); resetInputs()`)
+                button(type='submit') Confirmar

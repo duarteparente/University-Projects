@@ -1,0 +1,23 @@
+# DNS database file for domain .0.10-inaddr.reverse.g707.
+
+.0.10-inaddr.reverse.g707. SOASP SPinaddr.0.10-inaddr.reverse.g707. 86400
+.0.10-inaddr.reverse.g707. SOAADMIN dns\.admin.0.10-inaddr.reverse.g707. 86400
+.0.10-inaddr.reverse.g707. SOASERIAL 0122112022 86400  
+.0.10-inaddr.reverse.g707. SOAREFRESH 14400 86400
+.0.10-inaddr.reverse.g707. SOARETRY 3600 86400
+.0.10-inaddr.reverse.g707. SOAEXPIRE 604800 86400
+
+.0.10-inaddr.reverse.g707. NS SPinaddr.0.10-inaddr.reverse.g707. 86400
+
+
+10.0.8.11 PTR email1.rgm.ida.g707. 86400
+10.0.1.11 PTR email2.ida.g707. 86400
+10.0.5.11 PTR email3.adi.g707. 86400
+10.0.10.11 PTR email4.ppc.adi.g707. 86400
+
+sp CNAME SPinaddr 86400
+email1 CNAME email1 86400
+email2 CNAME email2 86400
+email3 CNAME email3 86400
+email4 CNAME email4 86400
+

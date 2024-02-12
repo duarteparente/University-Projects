@@ -1,0 +1,17 @@
+﻿namespace volUM.Pages
+
+body {
+    background-color: white;
+}
+
+h1 {
+    font-family: 'Comic Sans MS';
+    font-size: 40px;
+    color: red;
+    text-align: left;
+}
+
+p {
+    font-family: 'Comic Sans MS';
+    font-size: 30px;
+}

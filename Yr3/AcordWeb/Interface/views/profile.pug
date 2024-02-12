@@ -1,0 +1,121 @@
+doctype html
+html
+    head
+        title AcordWEB
+        meta(charset="utf-8")
+        link(rel='stylesheet', href='/stylesheets/profile.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel="stylesheet" href="/stylesheets/navbar.css")
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+    body
+
+        script. 
+            function dropDownToggle() {
+                var toggle = document.querySelector('.dropdown');
+                toggle.classList.toggle('active');
+            }
+
+            function mostrarPopupConfirmacao() {
+              if (confirm("Tem a certeza que deseja eliminar a sua conta? Essa ação é irreversível.")) {
+                window.location.href = "/eliminarConta";
+              }
+            }
+        
+
+        .container
+
+            include navbar.pug
+            
+            .content         
+            
+                .box
+                    .left
+                        .prof
+                            form(id="profileForm" action="/editarFoto" method="POST" enctype="multipart/form-data")
+                                label 
+                                    input(type="file" style="display:none;" name="profilePicture" id="profilePictureInput")
+                                    img.pr(src="/profile/" + profile.image)
+                                script.
+                                    document.getElementById('profilePictureInput').addEventListener('change', function() {
+                                      document.getElementById('profileForm').submit();
+                                    });
+                            h3 #{profile.username}
+
+                            .loc 
+                                img(src="/images/loc.png")
+                                h4 #{profile.localidade}
+                        if mine
+                            .confs
+                                .opts
+                                    img(src="/images/configs.png")
+                                    h4 Opções de Configuração
+                                .btns 
+                                    button.el 
+                                        a(href="#" onclick="mostrarPopupConfirmacao()") Eliminar Conta
+                                    
+
+
+                    .right
+                        .nameline 
+                            h1 #{profile.name}
+                            if mine
+                                button.ed 
+                                    a(href="/editarPerfil"): i.fa.fa-pencil &nbsp Editar Perfil
+                        .info  
+                            if profile.active
+                                .status
+                                    p Status: &nbsp
+                                        h3.on ONLINE
+                                .access
+                                    p Último Acesso: &nbsp
+                                        h3 ---
+                            else
+                                .status
+                                    p Status: &nbsp
+                                        h3.off OFFLINE
+                                .access
+                                    p Último Acesso: &nbsp
+                                        h3 #{profile.lastAccess}
+                            
+                            .info-content
+                            .rectangle
+                                h2.inf Informações Gerais
+                            .line-in 
+                            .line-aft
+
+                            .pfs
+                                p Profissão: &nbsp
+                                    h4 #{profile.profissao}
+                            
+                            .idd
+                                p Idade: &nbsp
+                                    h4 #{profile.idade}
+
+                            .em
+                                p Email: &nbsp
+                                    h4 #{profile.email}
+
+                            .nvl
+                                p Nível: &nbsp
+                                    h4 #{profile.level}
+                            .rfavs
+                                p Estatísticas de Acordãos
+                            hr
+                            table.prtable
+                                tr
+                                    th Favoritos
+                                    th Adicionados
+                                    th Editados
+                                tr
+                                    td: a(href="/" + profile.username + "/favoritos") #{profile.favs.length}
+                                    if adm
+                                        td: a(href="/" + profile.username + "/adicionados") #{profile.added.length}
+                                        td: a(href="/" + profile.username + "/editados") #{profile.edited.length}
+                                    else
+                                        td ---
+                                        td ---
+
+
+                        
+
+            include footer.pug

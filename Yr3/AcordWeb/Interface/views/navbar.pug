@@ -1,0 +1,20 @@
+nav.navbar
+    a(href="/")
+        img(src="/images/logo.png" class="logo")
+    ul.nav-links
+        .menu
+            if log
+                .action 
+                    .ple 
+                        img(src="/profile/"+image onclick="dropDownToggle();")
+                    .dropdown
+                        h3= username
+                        ul 
+                            li.p: a(href="/perfil") Perfil
+                            li.f: a(href="/" + username + "/favoritos") Favoritos
+                            if adm == true 
+                                li.a: a(href="/adicionar") Novo acórdão
+                                li.m: a(href="/" + username + "/adicionados") Meus Acordãos
+                            li.l: a(href="/logout") Logout
+            else
+                li: a(href="/login") Login/Registar

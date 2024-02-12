@@ -1,0 +1,84 @@
+extends layout
+
+block content
+    .w3-light-grey
+        .w3-card-4(style={'position': 'relative', 'min-height':'100vh'})
+            header.w3-container.w3-blue-grey
+                h1(style={'text-align': 'center'}) #[strong Task Manager]
+            br
+
+            form.w3-container(method="POST" action="/tasks/register")
+                fieldset
+                    legend #[strong TASK]
+                    div(style={'display': 'flex'})
+                        label.w3-padding Deadline:
+                        input.w3-input.w3-round(type="date" name="due_date" required)
+                        label.w3-padding Author:
+                        input.w3-input.w3-round(type="text" name="who" required)
+                    br
+                    div
+                        label.w3-padding Description
+                        input.w3-input.w3-round(type="text" name="what" required)
+                    br
+                    div.w3-left
+                        button.w3-button.w3-round-large.w3-blue-grey.w3-large Register
+
+            br
+            div.w3-row-padding.w3-padding.w3-card-4(name="content")
+                div.w3-half.w3-center.w3-card.w3-row-padding
+                    div.w3-row-padding.w3-blue-grey
+                        h3 #[strong TO DO]
+                    div 
+                        table.w3-table-all.w3-centered
+                            tr
+                                th Deadline
+                                th Description
+                                th Author 
+                                th Actions
+                            each task in t
+                                if task.done ==  0
+                                    tr
+                                        td(style={'vertical-align': 'middle'})= task.due_date
+                                        td(style={'vertical-align': 'middle'})= task.what
+                                        td(style={'vertical-align': 'middle'})= task.who 
+                                        td
+                                            div
+                                                button.w3-button.w3-round-large.w3-blue-grey(type="submit" style={'margin-right': '4px'})
+                                                    a(style={'text-decoration': 'none'} href="/tasks/edit/"+task.id)
+                                                        i.fa.fa-pencil
+                                                button.w3-button.w3-round-large.w3-green(type="submit" style={'margin-right': '4px'})
+                                                    a(style={'text-decoration': 'none'} href="/tasks/done/"+task.id)
+                                                        i.fa.fa-check
+                                                button.w3-button.w3-round-large.w3-red(type="submit")
+                                                    a(style={'text-decoration': 'none'} href="/tasks/delete/"+task.id)
+                                                        i.fa.fa-times
+                div.w3-half.w3-center.w3-card.w3-row-padding
+                    div.w3-row-padding.w3-blue-grey
+                        h3 #[strong DONE]
+                    div
+                        table.w3-table-all.w3-centered
+                            tr
+                                th Deadline
+                                th Description
+                                th Author 
+                                th Actions
+                            each task in t
+                                if task.done ==  1
+                                    tr
+                                        td(style={'vertical-align': 'middle'})= task.due_date
+                                        td(style={'vertical-align': 'middle'})= task.what
+                                        td(style={'vertical-align': 'middle'})= task.who 
+                                        td
+                                            div
+                                                button.w3-button.w3-round-large.w3-blue-grey(type="submit" style={'margin-right': '4px'})
+                                                    a(style={'text-decoration': 'none'} href="/tasks/undo/"+task.id)
+                                                        i.fa.fa-undo
+                                                button.w3-button.w3-round-large.w3-red(type="submit")
+                                                    a(style={'text-decoration': 'none'} href="/tasks/delete/"+task.id)
+                                                        i.fa.fa-times
+            br
+            br
+            br
+            footer.w3-footer.w3-padding-small.w3-blue-grey(style={'bottom': '0', 'position':'absolute', 'width':'100%'})
+                h5(style={'text-align': 'center'}) Task Manager - TPC5 - EngWeb2023 - #{d} - 
+                    a(href="/") [Main Page]

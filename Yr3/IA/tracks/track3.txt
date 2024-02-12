@@ -1,0 +1,9 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXF-----------X---------------X
+XF--X--XX---------------------X
+X-----X-------XX--------------X
+XXX--X------------XX-----XX---X
+X------------XX----------XXP--X
+X------------XX-------X--XX---X
+X---------------------X-------X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

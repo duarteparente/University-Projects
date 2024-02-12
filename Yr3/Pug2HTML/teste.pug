@@ -1,0 +1,31 @@
+- 
+    var user = true
+- var title = 38
+
+- var list = ["Uno", "Dos", "Tres", "Quatro"]
+
+doctype html
+
+html(lang='en')
+    //-IGNORA ME
+    // this is head
+    if user
+        p.
+            You #{title} amazing #{user} and us #{list[1]}
+            Dá me o 38
+        h1 Este nao vai dar
+    button#id1.class1.class2
+        title!= 'This is code is <escaped>'
+        script some Script
+    body(lang='tuga', titulo='38')
+        h1 Pug - node template engine
+        // just some paragraphs
+        p.
+            You #{title} amazing #{user} and us #{list[1]}
+            Dá me o 38
+        h1 este não vai dar
+    input(
+      type='checkbox'
+      name='agreement'
+      checked
+    )

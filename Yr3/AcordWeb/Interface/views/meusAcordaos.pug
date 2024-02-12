@@ -1,0 +1,35 @@
+html 
+    head 
+        title AcordWEB 
+        link(rel="stylesheet" href="/stylesheets/meusAcordaos.css")
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+        link(rel="stylesheet" href="/stylesheets/navbar.css")
+    body
+        script. 
+            function dropDownToggle() {
+                var toggle = document.querySelector('.dropdown');
+                toggle.classList.toggle('active');
+            }
+
+        .container
+            include navbar.pug
+            
+            .content         
+                .title
+                    if edit
+                        h1 Acordãos editados [#{meus.length} registos encontrados]
+                    else 
+                        h1 Acordãos adicionados [#{meus.length} registos encontrados]
+
+                .box
+                    .table-wrapper
+                        if meus.length > 0
+                            table 
+                                tr 
+                                    th Processo
+                                each ac in meus
+                                    tr 
+                                        td 
+                                            a(href="/processo?proc=" + ac)= ac
+
+            include footer.pug

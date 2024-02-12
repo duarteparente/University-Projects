@@ -1,0 +1,14 @@
+
+adi.g707. NS SPadi.adi.g707. 86400
+adi.g707. NS SS1adi.adi.g707. 86400
+adi.g707. NS SS2adi.adi.g707. 86400
+ida.g707. NS SPida.ida.g707. 86400
+ida.g707. NS SS1ida.ida.g707. 86400
+ida.g707. NS SS2ida.ida.g707. 86400
+
+SPadi.adi.g707. A 10.0.4.10 86400
+SS1adi.adi.g707. A 10.0.5.10 86400
+SS2adi.adi.g707. A 10.0.6.10 86400
+SPida.ida.g707. A 10.0.1.10 86400
+SS1ida.ida.g707. A 10.0.3.10 86400
+SS2ida.ida.g707. A 10.0.2.10 86400

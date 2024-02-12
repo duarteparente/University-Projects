@@ -1,0 +1,14 @@
+# DNS database file for domain reverse.g707.
+
+reverse.g707. SOASP SPreverse.reverse.g707. 86400
+reverse.g707. SOAADMIN dns\.admin.reverse.g707. 86400
+reverse.g707. SOASERIAL 0122112022 86400  
+reverse.g707. SOAREFRESH 14400 86400
+reverse.g707. SOARETRY 3600 86400
+reverse.g707. SOAEXPIRE 604800 86400
+
+reverse.g707. NS SPreverse.reverse.g707. 86400
+.0.10-inaddr.reverse.g707. NS SPinaddr.0.10-inaddr.reverse.g707. 86400
+
+
+sp CNAME SPreverse 86400

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+    .w3-card
+        header.w3-container.w3-blue-grey
+            h1(align='center') Distribuição Arbórea
+            h4(align='left') Número de registos: #{plantas.length}
+        br
+        .w3-container
+            table.w3-table-all
+                tr.w3-blue-grey
+                    th ID
+                    th Freguesia
+                    th Espécie
+                    th Estado
+                    th Nr Intervenções
+                each p in plantas
+                    tr  
+                        td: a(href='/' + p._id)= p._id
+                        td= p.Freguesia
+                        td: a(href='/especies/' + p.Especie)= p.Especie
+                        td= p.Estado
+                        td= p.NumeroDeIntervencoes
+            br
+            br
+            br
+            a(href='/') [Voltar ao Início]
+        brbr
+        footer.w3-container.w3-blue-grey
+            h4(align='center') Interface Realizada no Âmbito do Exame de EngWeb
+            p(align='center') Duarte Parente, A95844  ::  30/05/2023

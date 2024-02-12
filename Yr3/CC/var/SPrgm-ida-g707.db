@@ -1,0 +1,24 @@
+# DNS database file for subdomain rgm.ida.g707.
+
+rgm.ida.g707. SOASP SPrgm.rgm.ida.g707. 86400
+rgm.ida.g707. SOAADMIN dns\.admin.rgm.ida.g707. 86400
+rgm.ida.g707. SOASERIAL 0122112022 86400
+rgm.ida.g707. SOAREFRESH 14400 86400
+rgm.ida.g707. SOARETRY 3600 86400
+rgm.ida.g707. SOAEXPIRE 604800 86400
+
+rgm.ida.g707. NS SPrgm.rgm.ida.g707. 86400
+rgm.ida.g707. NS SS1rgm.rgm.ida.g707. 86400
+rgm.ida.g707. NS SS2rgm.rgm.ida.g707. 86400
+
+rgm.ida.g707. MX email1.rgm.ida.g707. 86400 10
+
+SPrgm.rgm.ida.g707. A 10.0.7.10 86400
+SS1rgm.rgm.ida.g707. A 10.0.8.10 86400
+SS2rgm.rgm.ida.g707. A 10.0.9.10 86400
+email1.rgm.ida.g707. A 10.0.8.11 86400
+
+sp CNAME SPrgm 86400
+ss1 CNAME SS1rgm 86400
+ss2 CNAME SS2rgm 86400
+email1 CNAME email1 86400

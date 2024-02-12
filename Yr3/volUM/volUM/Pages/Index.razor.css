@@ -1,0 +1,54 @@
+﻿namespace volUM.Pages
+
+body{
+
+    color : white;
+}
+h1 {
+
+    font-family: serif;
+    color: red;
+    text-align: center;
+}
+
+p {
+    font-family: serif;
+    font-size: 30px;
+    color: deeppink;
+    text-align: center;
+}
+
+div.demo-waiting {
+    cursor: wait;
+    line-height: 3;
+}
+
+div.demo-help {
+    cursor: help;
+    line-height: 3;
+}
+
+div.demo-crosshair {
+    cursor: crosshair;
+    line-height: 3;
+}
+
+div.demo-grab {
+    cursor: grab;
+    line-height: 3;
+}
+
+div.sad {
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;
+    line-height: 3;
+}
+
+div.happy {
+     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='50' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>1904</text></svg>") 16 0,auto;
+    line-height: 3;
+}
+
+div.Benfica {
+
+    line-height: 5;
+}

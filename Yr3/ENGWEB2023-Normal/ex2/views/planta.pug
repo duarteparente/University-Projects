@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    
+    .w3-card
+        header.w3-container.w3-blue-grey
+            h1(align='center') Consulta de Registo Individual
+            h4(align='left') ID: #{c._id}
+        br
+        .w3-container
+            ul
+                li="Número de Registo: "+c.NumeroDeRegisto
+            h3= "   Freguesia: " +c.Freguesia
+            ul
+                li="Código de Rua: "+c.CodigoDeRua
+                li="Rua: "+c.Rua
+                li="Local: "+c.Local
+            h3= "   Espécie: " +c.Especie
+            ul
+                li="Nome Científico: "+c.NomeCientifico
+                li="Origem: "+c.Origem
+                li="Data De Plantação: "+c.DataDePlantacao
+                li="Estado: "+c.Estado
+                li="Caldeira: "+c.Caldeira
+                li="Tutor: "+c.Tutor
+                li="Implantação: "+c.Implantacao
+                li="Gestor: "+c.Gestor
+                li="Data De Atualização: "+c.DataDeActualizacao
+                li="Número de Intervenções: "+c.NumeroDeIntervencoes
+            brbrbr
+            a(href='/') [Voltar à Página Pricipal]
+        brbr
+        footer.w3-container.w3-blue-grey
+            h4(align='center') Interface Realizada no Âmbito do Exame de EngWeb
+            p(align='center') Duarte Parente, A95844  ::  30/05/2023

@@ -1,0 +1,31 @@
+// 1.1
+Persistência dos dados
+Foram renomeadas as seguintes colunas: 
+  id -> _id
+  Número de Registo -> NumeroDeRegisto
+  Código de rua -> CodigoDeRua
+  Espécie -> Especie
+  Nome Científico -> NomeCientifico
+  DataDePlantacao -> DataPlantacao
+  Implantação -> Implantacao
+  Data de actualização -> DataDeActualizacao
+  Número de intervenções -> NumeroDeIntervencoes
+
+// Load
+mongoimport -d plantas -c plantas plantas.json --jsonArray
+
+// 1.2
+// 1
+db.plantas.count()
+
+// 2
+db.plantas.count({Freguesia: "São Domingos de Rana"})
+
+// 3
+db.plantas.distinct("Freguesia").sort()
+
+// 4
+db.plantas.aggregate([{$group: {"_id": "$Freguesia", "count": {$sum: 1}}}])
+
+// 5
+db.plantas.aggregate([{$group: {"_id": "$Especie", "count": {$sum: 1}}}])

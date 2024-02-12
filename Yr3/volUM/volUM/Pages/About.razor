@@ -1,0 +1,28 @@
+﻿@page "/about"
+
+<PageTitle>About Us</PageTitle>
+
+<h1>
+<span class="oi oi-cloud" aria-hidden="true"></span> volUM
+</h1>
+<h3>
+		<span class="oi oi-magnifying-glass" aria-hidden="true"></span> Sobre Nós
+</h3>
+
+Somos uma aplicação para feiras online, com características distintas dos mercados de venda online mais conhecidos.
+
+
+<button class="btn btn-primary" @onclick="info">Clica aqui corno</button>
+
+<p role="status">Mensagem de Boas Vindas: @msg</p>
+
+@code
+{
+	private String msg = "";
+	private void info()
+	{
+		msg = "Mama-me na gaita!";
+	}
+}
+
+

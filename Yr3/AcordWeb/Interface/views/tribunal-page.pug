@@ -1,0 +1,33 @@
+html 
+    head 
+        title AcordWEB 
+        link(rel="stylesheet" href="/stylesheets/tribunal-page.css")
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+        link(rel="stylesheet" href="/stylesheets/navbar.css")
+    body
+        script. 
+            function dropDownToggle() {
+                var toggle = document.querySelector('.dropdown');
+                toggle.classList.toggle('active');
+            }
+        
+        .container
+            include navbar.pug
+            
+            .content         
+                .title 
+                    h1 #{ft} [#{acs.length} registos encontrados]
+                .box
+                    .table-wrapper
+                        table 
+                            tr 
+                                th Processo 
+                                th url 
+                            each ac in acs 
+                                tr 
+                                    td 
+                                        a(href="/processo?proc=" + ac.Processo)= ac.Processo
+                                    td 
+                                        a(href="http://www.dgsi.pt" + ac.url target='_blank')= ac.url
+
+            include footer.pug

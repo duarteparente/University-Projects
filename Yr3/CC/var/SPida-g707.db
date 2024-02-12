@@ -1,0 +1,26 @@
+# DNS database file for domain ida.g707.
+
+ida.g707. SOASP SPida.ida.g707. 86400
+ida.g707. SOAADMIN dns\.admin.ida.g707. 86400
+ida.g707. SOASERIAL 0122112022 86400  
+ida.g707. SOAREFRESH 14400 86400
+ida.g707. SOARETRY 3600 86400
+ida.g707. SOAEXPIRE 604800 86400
+
+ida.g707. NS SPida.ida.g707. 86400
+ida.g707. NS SS1ida.ida.g707. 86400
+ida.g707. NS SS2ida.ida.g707. 86400
+rgm.ida.g707. NS SPrgm.rgm.ida.g707 86400
+
+ida.g707. MX email2.ida.g707. 86400 10
+
+SPida.ida.g707. A 10.0.1.10 86400
+SS1ida.ida.g707. A 10.0.3.10 86400
+SS2ida.ida.g707. A 10.0.2.10 86400
+email2.ida.g707. A 10.0.1.11 86400
+SPrgm.rgm.ida.g707 A 10.0.7.10 86400
+
+sp CNAME SPida 86400
+ss1 CNAME SS1ida 86400
+ss2 CNAME SS2ida 86400
+mail2 CNAME email2 86400

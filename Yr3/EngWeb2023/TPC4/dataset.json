@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "due_date": "2023-05-05",
+      "who": "Gonçalo",
+      "what": "TP3 CG",
+      "done": 1,
+      "id": 2
+    },
+    {
+      "due_date": "2023-05-13",
+      "who": "Santiago",
+      "what": "TP ADI",
+      "done": 0,
+      "id": 3
+    },
+    {
+      "due_date": "2023-05-25",
+      "who": "Duarte",
+      "what": "Exame PL",
+      "done": 0,
+      "id": 4
+    },
+    {
+      "due_date": "2023-05-22",
+      "who": "José",
+      "what": "Exame ADI",
+      "done": 0,
+      "id": 5
+    },
+    {
+      "due_date": "2023-05-31",
+      "who": "Duarte",
+      "what": "Exame IPM",
+      "done": 0,
+      "id": 6
+    },
+    {
+      "due_date": "2023-05-29",
+      "who": "Gonçalo",
+      "what": "Exame EW",
+      "done": 0,
+      "id": 7
+    }
+  ]
+}

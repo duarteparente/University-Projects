@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .w3-light-grey
+        .w3-card-4(style={'position': 'relative', 'min-height':'100vh'})
+            header.w3-container.w3-blue-grey
+                h1(style={'text-align': 'center'}) #[strong Task Manager]
+            br
+
+            form.w3-container(method="POST" action="/tasks/edit/"+t.id)
+                fieldset
+                    legend #[strong TASK]
+                    div(style={'display': 'flex'})
+                        label.w3-padding Deadline:
+                        input.w3-input.w3-round(type="date" name="due_date" value=t.due_date required)
+                        label.w3-padding Author:
+                        input.w3-input.w3-round(type="text" name="who" value=t.who required)
+                    br
+                    div
+                        label.w3-padding Description
+                        input.w3-input.w3-round(type="text" name="what" value=t.what required)
+                        input(type="hidden" name="id" value=t.id)
+                    br
+                    div.w3-left
+                        button.w3-button.w3-round-large.w3-blue-grey.w3-large Register
+
+            footer.w3-footer.w3-padding-small.w3-blue-grey(style={'bottom': '0', 'position':'absolute', 'width':'100%'})
+                h5(style={'text-align': 'center'}) Task Manager - TPC5 - EngWeb2023 - #{d} - 
+                    a(href="/") [Main Page]

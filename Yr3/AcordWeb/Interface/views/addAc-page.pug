@@ -1,0 +1,60 @@
+html 
+    head 
+        title AcordWEB 
+        link(rel="stylesheet" href="/stylesheets/addAc-page.css")
+        link(rel="stylesheet" href="/stylesheets/footer.css")
+        link(rel="stylesheet" href="/stylesheets/navbar.css")
+    body
+        script. 
+            function dropDownToggle() {
+                var toggle = document.querySelector('.dropdown');
+                toggle.classList.toggle('active');
+            }
+        .container
+        
+            include navbar.pug
+            
+            .content
+                form(action=`/adicionar` method="POST")        
+                    .title 
+                        h1 Novo Acórdão
+                    if msg == 'NO'
+                        p.err O processo já se encontra na base de dados!
+
+                    .box
+                        .table-wrapper
+                            table 
+                                tr 
+                                    th Atributos 
+                                    th Campos de preenchimento 
+                                each key in Object.keys(d)  
+                                    tr 
+                                        td.key= d[key]
+                                        td
+                                            if key == "Processo"
+                                                input(name=key type="text" required)
+                                            else if key == 'tribunal'
+                                                select(name="tribunal")
+                                                    option(value="atco1") atco1
+                                                    option(value="jcon") jcon
+                                                    option(value="jdgpj") jdgpj
+                                                    option(value="jsta") jsta
+                                                    option(value="jstj") jstj
+                                                    option(value="jtca") jtca
+                                                    option(value="jtcampca") jtcampca
+                                                    option(value="jtcampct") jtcampct
+                                                    option(value="jtcn") jtcn
+                                                    option(value="jtrc") jtrc
+                                                    option(value="jtre") jtre
+                                                    option(value="jtrg") jtrg
+                                                    option(value="jtrl") jtrl
+                                                    option(value="jtrp") jtrp
+                                            else
+                                                input(name=key type="text")
+                        input(type="text" style="display:none;" name="AdicionadoPor" value=username)
+                        input(type="text" style="display:none;" name="Added" value=date)
+                        input(type="text" style="display:none;" name="Edited" value="N")
+
+                    button.cr(type='submit') Adicionar
+
+            include footer.pug

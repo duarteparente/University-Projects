@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "due_date": "2023-05-25",
+      "who": "Duarte",
+      "what": "Exame PL",
+      "done": 0,
+      "id": 4
+    },
+    {
+      "due_date": "2023-05-22",
+      "who": "José",
+      "what": "Exame ADI",
+      "done": 0,
+      "id": 5
+    },
+    {
+      "due_date": "2023-03-30",
+      "who": "Duarte",
+      "what": "Futebolada Cova",
+      "done": 0,
+      "id": 8
+    },
+    {
+      "due_date": "2023-03-30",
+      "who": "Duarte",
+      "what": "Peladinha",
+      "done": 0,
+      "id": 9
+    },
+    {
+      "due_date": "2023-04-20",
+      "who": "Duarte",
+      "what": "Futebolada",
+      "id": 10,
+      "done": 0
+    }
+  ]
+}

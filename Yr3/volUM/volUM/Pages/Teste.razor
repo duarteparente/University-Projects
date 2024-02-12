@@ -1,0 +1,25 @@
+﻿@page "/teste"
+
+<PageTitle>About_us</PageTitle>
+
+<h1>
+<span class="oi oi-cloud" aria-hidden="true"></span> volUM
+</h1>
+<h3>
+		<span class="oi oi-magnifying-glass" aria-hidden="true"></span> Sobre Nós
+</h3>
+
+Somos uma aplicação para feiras online, com características distintas dos mercados de venda online mais conhecidos.
+
+
+<button class="btn btn-primary" @onclick="info">Click me</button>
+
+@code
+{
+
+	private void info()
+	{
+		Console.WriteLine("Mama-me na gaita!");
+	}
+}
+

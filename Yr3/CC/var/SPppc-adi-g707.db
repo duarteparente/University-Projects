@@ -1,0 +1,24 @@
+# DNS database file for subdomain ppc.adi.g707.
+
+ppc.adi.g707. SOASP SPppc.ppc.adi.g707. 86400
+ppc.adi.g707. SOAADMIN dns\.admin.ppc.adi.g707. 86400
+ppc.adi.g707. SOASERIAL 0122112022 86400  
+ppc.adi.g707. SOAREFRESH 14400 86400
+ppc.adi.g707. SOARETRY 3600 86400
+ppc.adi.g707. SOAEXPIRE 604800 86400
+
+ppc.adi.g707. NS SPppc.ppc.adi.g707. 86400
+ppc.adi.g707. NS SS1ppc.ppc.adi.g707. 86400
+ppc.adi.g707. NS SS2ppc.ppc.adi.g707. 86400
+
+ppc.adi.g707. MX email4.ppc.adi.g707. 86400 10
+
+SPppc.ppc.adi.g707 A 10.0.10.10 86400
+SS1ppc.ppc.adi.g707 A 10.0.11.10 86400
+SS2ppc.ppc.adi.g707 A 10.0.12.10 86400
+email4.ppc.adi.g707 A 10.0.10.11 86400
+
+sp CNAME SPppc 86400
+ss1 CNAME SS1ppc 86400
+ss2 CNAME SS2ppc 86400
+email4 CNAME email4 86400
