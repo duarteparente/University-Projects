@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Elementos</title>
+        <link rel="icon" href="{{ url_for('static',filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/w3.css') }}"/>
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1 style="text-align: center;">{{ data.nome }}</h1>
+            </header>
+
+            <div class="w3-container">
+                <div style="margin-left: 30px; margin-right: 30px; font-size:large;">
+                    <p><b>Símbolo: </b> {{ data.dados.simb.value }} </p>
+                    {% set group_name = data.dados.group.value.split('#')[-1] %}
+                    <p><b>Grupo: </b><a href="/grupos/{{ group_name }}">
+                        {% if data.dados.gname %}
+                            {{ data.dados.gname.value }}
+                        {% else %}
+                            {{ group_name }}
+                        {% endif %}
+                    </a> </p>
+                    <p><b>Número Atómico: </b> {{ data.dados.num.value }} </p>
+                    {% if data.dados.aw %}
+                        <p><b>Peso Atómico: </b> {{ data.dados.aw.value }} </p>
+                    {% endif %}
+                    {% if data.dados.b %}
+                        {% set block_name = data.dados.b.value.split('#')[-1] %}
+                        <p><b>Bloco: </b> {{ block_name }} </p>
+                    {% endif %}
+                    {% if data.dados.cr %}
+                        <p><b>CasRegistryID: </b> {{ data.dados.cr.value }} </p>
+                    {% endif %}
+                    {% if data.dados.c %}
+                        {% set classif_name = data.dados.c.value.split('#')[-1] %}
+                        <p><b>Classificação: </b> {{ classif_name }} </p>
+                    {% endif %}
+                    {% if data.dados.col %}
+                        <p><b>Classificação: </b> {{ data.dados.col.value }} </p>
+                    {% endif %}
+                    {% if data.dados.period %}
+                        {% set period_name = data.dados.c.value.split('#')[-1] %}
+                        <p><b>Período: </b> {{ period_name }} </p>
+                    {% endif %}
+                    {% if data.dados.ss %}
+                        {% set ss_name = data.dados.ss.value.split('#')[-1] %}
+                        <p><b>Standard State: </b> {{ ss_name }} </p>
+                    {% endif %}
+                    <br>
+                    <p style="text-align: center; font-size: medium;">
+                        <adress>[<a href="/">Página Inicial</a>]</adress>
+                        <adress>[<a href="/elementos">Tabela dos Elementos</a>]</adress>
+                        <adress>[<a href="/grupos">Tabela dos Grupos</a>]</adress>
+                    </p>
+                </div>  
+            </div>
+
+            <footer class="w3-container w3-purple w3-bottom">
+                <h5 style="text-align: center;">Gerado por RPCW2024 [TPC4] em {{ data.data }}</h5>
+            </footer>
+        </div>
+    </body>
+</html>

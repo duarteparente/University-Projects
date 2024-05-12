@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Fall Detective</string>
+    <string name="signup"><u>Já tem uma conta registada?</u></string>
+    <string name="login"><u>Ainda não tem conta registada?</u></string>
+    <string name="forgotPassword"><u>Esqueceu a Password?</u></string>
+    <string name="main"><u>Já tenho uma conta</u></string>
+    <string name="title_activity_main2">MainActivity2</string>
+
+</resources>

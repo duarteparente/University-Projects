@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".AddContactsActivity">
+
+    <ImageView
+        android:id="@+id/editContactsBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:src="@drawable/round_arrow_back_24" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Contactos de Emergência"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="@color/logo" />
+
+    <Button
+        android:layout_marginTop="25dp"
+        android:id="@+id/addContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/logo"
+        android:background="@drawable/button_addcontact"
+        android:text="Adicionar Contacto"
+        android:drawableLeft="@drawable/baseline_add_circle_24"
+        android:textSize="14sp"/>
+    <!--
+
+        <LinearLayout
+            android:id="@+id/addContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_add_circle_24" />
+
+            <TextView
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Adicionar Contacto"/>
+
+        </LinearLayout>
+    -->
+    <!--
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:strokeColor="@color/logo"
+        app:strokeWidth="2dp"
+        >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/contactsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="350dp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="(Selecione o contacto para atualizar)" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/logo"
+        android:layout_marginTop="5dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/contactsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="350dp" />
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="180dp"
+        android:textSize="17sp"
+        android:text="Submeter"
+        android:layout_height="55dp" />
+
+
+
+</LinearLayout>

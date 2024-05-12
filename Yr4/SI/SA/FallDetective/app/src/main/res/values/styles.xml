@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="Widget.App.AboutPage" parent="about_About">
+        <item name="aboutBackground">@color/background</item>
+
+    </style>
+
+</resources>

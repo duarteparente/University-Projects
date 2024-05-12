@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1">
+
+        <item
+            android:id="@+id/home"
+            android:title="Página Principal"
+            android:icon="@drawable/baseline_home_24"/>
+
+        <item
+            android:id="@+id/fallRecords"
+            android:title="Histório de Quedas"
+            android:icon="@drawable/baseline_history_24"/>
+
+        <item
+            android:id="@+id/profile"
+            android:title="Perfil"
+            android:icon="@drawable/baseline_person_24"/>
+
+        <item
+            android:id="@+id/configs"
+            android:title="Configurações"
+            android:icon="@drawable/baseline_build_24"/>
+
+        <item
+            android:id="@+id/aboutUs"
+            android:title="Informações"
+            android:icon="@drawable/baseline_info_24"/>
+
+
+    </group>
+
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/baseline_logout_24"
+                android:title="Logout"/>
+        </menu>
+    </item>
+
+
+
+</menu>

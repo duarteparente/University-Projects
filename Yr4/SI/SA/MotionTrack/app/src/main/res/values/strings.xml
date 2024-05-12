@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MotionTrack</string>
+
+    <string-array name="activities">
+        <item>Caminhar</item>
+        <item>Sentar</item>
+        <item>Deitar</item>
+        <item>Cair</item>
+    </string-array>
+</resources>

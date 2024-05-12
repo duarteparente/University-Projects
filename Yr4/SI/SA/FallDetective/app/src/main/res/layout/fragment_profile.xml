@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="63dp"
+            android:layout_height="64dp"
+            android:src="@drawable/logo"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center" />
+
+
+        <TextView
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Name"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/profileEmail"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name@gmail.com"
+            android:textSize="17sp" />
+
+        <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateTint="@color/logo"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:drawablePadding="5dp"
+                android:textSize="15sp"
+                android:drawableStart="@drawable/gender_24"
+                android:id="@+id/profileGender"
+                android:text="Género" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileBirthDate"
+                android:gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:drawablePadding="5dp"
+                android:textSize="15sp"
+                android:visibility="invisible"
+                android:drawableStart="@drawable/baseline_cake_24"
+                android:text="Data de nascimento" />
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contactos de Emergência"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_height="2dp"
+            android:background="@color/logo"
+            android:layout_marginTop="5dp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/contactsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="350dp" />
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>
