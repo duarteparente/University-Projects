@@ -1,0 +1,5 @@
+data/texts/
+data/dre.json
+data/2024-04-07-DRE_dump.sql
+models/
+__pycache__
